@@ -1,15 +1,26 @@
-print('Welcome to Quiz Maker, a program where you can make and take quizes and tests.\n')
+import game_intro
+import create_quiz
+import take_quiz
 
+# Game intro - welcome screen and description
+game_intro.run()
+
+# User registration
 name = input('Please enter your name: \n')
 print('Hello, '+name+'!\n')
-choice = input('Select your choice: \n - Type 1 to create a quiz \n - Type 2 to take a quiz\n')
 
-if choice == '1':
-    print('You have chosen to create a quiz.')
-elif choice == '2':
-    print('You have chosen to take a quiz.')
-else:
-    print('That is not a valid option, please try again.')
+is_quit = False
+
+while is_quit == False:
+    #Make a choice
+    choice = input('\nSelect your choice: \n - Type 1 to create a quiz \n - Type 2 to take a quiz\n - Type anything else to quit\n\n')
+
+    if choice == '1':
+        create_quiz.run()
+    elif choice == '2':
+        take_quiz.run()
+    else:
+        is_quit = True
 
 
     
