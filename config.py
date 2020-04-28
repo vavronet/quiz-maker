@@ -7,3 +7,5 @@ subjects = {
 }
 
 min_title = 4
+
+min_questions = 5
