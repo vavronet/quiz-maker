@@ -1,5 +1,6 @@
 import config
 
+# Function run
 def run():
     print('You have chosen to create a quiz.\n') 
   
@@ -10,9 +11,11 @@ def run():
     title = get_title()
     
     #Add questions and answers
+    questions = get_questions()
 
     #Save
 
+# Function get_subject
 def get_subject():
     input_text = 'Please choose the subject you want your quiz to fall under:\n'
     
@@ -32,6 +35,7 @@ def get_subject():
 
     return subject_key
     
+# Function get_title    
 def get_title():
     valid_title = False
 
@@ -46,4 +50,47 @@ def get_title():
     
     return title
 
-    
+def get_questions():
+    # initialize questions list
+    questions = []
+    no = 1
+
+    # while loop for questions
+        # Create question dictionary 
+        question = {}
+        # Add no
+        question['no'] = no
+        # Ask for body with validation
+        question['body'] = get_body()
+        
+        choices = {}
+        # While loop for choices
+            # Get choice key using string.ascii_lowercase
+            choice_key = x
+            # Ask for choice body with validation
+            choice_value = get_choice()
+            # Append element to choices
+            choices[choice_key] = choice_value
+            # Increment the key
+        # Append choices to question
+        question['choices'] = choices
+        # Ask for correct answer with validation
+        question['answer'] = get_answer(choices.keys)
+        # Append question to questions list
+        questions.append(question)
+        # inceremnt no
+        no = no + 1
+        
+    return questions
+
+def get_body():
+
+    return ''
+
+def get_choice():
+
+    return ''
+
+def get_answer(choices_keys):
+
+    return ''
